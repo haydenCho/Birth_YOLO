@@ -45,12 +45,11 @@
 ### 개발 환경
 - Python 버전: 3.9.20
 - CUDA 버전: 11.8
-- 사용 도구: Visual Studio Code, Jupyter Notebook
-- 사용 폰트(혼동행렬): 맑은고딕
+- 사용 도구: Visual Studio Code
 
 <br/>
 
-### use-model-code
+### 코드 설명
 
 <br/>
 
