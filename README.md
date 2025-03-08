@@ -8,7 +8,7 @@
 
 <br/>
 
-### 2. 개발환경 및 기간
+### 2. 개발 기간
 
 <br/>
 
@@ -38,6 +38,19 @@
 <br/>
 
 ## 모델 평가
+
+<br/>
+
+## 프로젝트 활용 설명
+### 개발 환경
+- Python 버전: 3.9.20
+- CUDA 버전: 11.8
+- 사용 도구: Visual Studio Code, Jupyter Notebook
+- 사용 폰트(혼동행렬): 맑은고딕
+
+<br/>
+
+### use-model-code
 
 <br/>
 
