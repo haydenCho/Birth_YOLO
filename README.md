@@ -3,6 +3,12 @@
 
 <br/>
 
+## 프로젝트 논문
+- [영상분석 기반 임산부 인증 수유실 자동 출입 관리](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11990080)
+    - DOI: 10.6109/jkiice.2024.28.11.1379
+
+<br/>
+
 ## 프로젝트 개요
 ### 1. 프로젝트 주제 및 목표
 **이 프로젝트는 지하철 내 수유실의 보안성과 사용 편의성을 동시에 향상시키기 위해 영상 분석 기반의 수유실 출입 자동 인식 시스템을 구현하는 것을 목표로 한다.** <br/>
@@ -11,8 +17,9 @@
 <br/>
 
 ### 2. 개발 기간
-캡스톤디자인1, 캡스톤디자인2<br/>
-2023.10.14 ~ 2024.06.14
+- 전체 기간: 2023.10.14 ~ 2024.06.14 (약 8개월)
+    - 데이터셋 구축: 2023.10.14 ~ 2024.01.26
+    - 모델 학습: 2024.01.27 ~ 2024.06.14
 
 <br/>
 
@@ -80,7 +87,9 @@
 - [공식 깃허브](https://github.com/ultralytics/yolov5)
 - [공식 문서](https://docs.ultralytics.com/ko/models/yolov5/#performance-metrics)
 - 학습 코드는 공식 깃허브의 코드를 로컬로 받아 사용
-    - 학습 코드(train.py): `python train.py --batch 16 --epochs 30 --data C:/Birth/myvenv/yolov5/dataset/data.yaml --hyp data/hyps/hyp_evolve.yaml --name birth_test_xl_5_3`
+    ```
+  python train.py --batch 16 --epochs 30 --data C:/Birth/myvenv/yolov5/dataset/data.yaml --hyp data/hyps/hyp_evolve.yaml --name birth_test_xl_5_3
+    ```
 
 <br/>
 
@@ -119,6 +128,8 @@
     - AP(Average Precision): 정밀도-재현율(Precision-Recall) 곡선 아래의 면적을 계산한 값, 객체 검출 모델의 성능을 종합적으로 평가하는 지표이며, mAP은 AP의 평균
 - **이 프로젝트에서는 사용자 안전을 위해 오검출을 최소화하는 것이 중요하며, 편리성을 위해 미검출도 줄여야 한다. 따라서 최종적으로 모델 성능을 비교할 때는 정밀도와 재현율을 모두 반영한 mAP 지표를 기준으로 평가한다.**
 
+<br/>
+
 ### 평가 결과
 | Num | lr0 | lrf | 정밀도 (Precision) | 재현율 (Recall) | mAP_0.5 |
 |  -  | --- | --- | ----------------- | --------------- | --------------- |
@@ -126,11 +137,25 @@
 |  2  | 0.1 | 0.1 | 68.6             | 79.6            | 87.2            |
 |  3  | 0.001 | 0.01 | 85.9          | 87.5            | 91.9            |
 
-<br/>
-
-## 프로젝트 활용 설명
-### 코드 설명
 
 <br/>
 
 ## Reference
+- [공식 깃허브](https://github.com/ultralytics/yolov5)
+- [공식 문서](https://docs.ultralytics.com/ko/models/yolov5/#performance-metrics)
+- http://www.civicnews.com/news/articleView.html?idxno=14821
+- J.H Choi, and K.S Nam, "Lactation Room Design Guidelines for Birth Friendly Environment," Journal of the Korean Society Design Culture, vol. 20, no. 4, pp. 721-730, Dec. 2014.  UCI : G704-001533.2014.20.4.040
+- K.M. Hosny, N.A. Ibrahim, E.R. Mohamed, and H.M. Hamza, "Artificial intelligence-based masked face detection: A survey," Intelligent Systems with Applications, vol. 22, 200391, Jun. 2024. DOI: 10.1016/j.iswa.2024.200391
+- K. V. Nuthan, B. V. S. Krishna, R. S. Gound, “Survey on Face Recognition using an improved VGGNet Convolutional Neural Network,” in Proceeding of International Conference on Sustainable Computing and Smart Systems, Coimbatore, India, 2023, DOI : 10.1109/ICSCSS57650.2023.10169193
+- J.R. Lee, K. W. Ng, and Y. J. Yoong, “Face and Facial Expressions Recognition System for Blind People Using ResNet50 Architecture and CNN,” Journal of Information and Web Engineeing, vol. 2, no. 2, Sep. 2023. DOI :  10.33093/jiwe.2023.2.2.20
+- H.W. Kim, B.Y. Ko, J.H Shim, W.Y. Chung, and E.J. Hwang, "A Front Face Recognition Scheme Using FaceNet and Facial Landmark Points Detector," in Proceedings of Korean Institute of Information Scientists and Engineers, Seoul, Korea, pp. 364-366, Dec. 2020.
+- S. Jeon, J. Lee, M. Kim, S. Hong, J. Bang, and H. Kim, "A Study on Helmet Wear Identification Using YOLOv5 Object Recognition Model," in Proceedings of Symposium of the Korean Institute of Communications and Information Sciences, pp. 1293-1294, Pyeongchang, Korea, Feb. 2022. 
+- S.Y. Jeong, M.J. Kang, and B.Y. Lee, "YOLOv5-based Fall Detection Research for Elderly Living Alone," JOURNAL OF THE KOREA CONTENTS ASSOCIATION, vol. 23, no. 11, pp. 83-89, Nov. 2023. DOI: https://doi.org/10.5392/ JKCA.2023.23.11.083
+- I.C. Choi, T.H. Kim, H.S. Seo, and J.H. Ock, "Development of Automated Access Mangement Solution through CCTV Face Recognition based on Artificail Intelligence," in Proceedings of A collection of papers for the Korean Architectural Association's academic presentation, Busan, Korea pp. 1139-1142, Apr. 2023. Available: https:// www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11427576
+- J.T. Kim, M.H. Lee, H.K. Lee, S.H. Lee, and W.G. Lee, "Design of a bus-entrance doors tracking and guiding system for navigating visually impaired people via a modified YOLO algorithm," in Proceedings of Institute of Control, Robotics and Systems, Gangwon, Korea, pp. 242-243, Jul. 2020. 
+- H.D. Ghael, L. Solanki, and G. Sahu, "A Review Paper on Raspberry Pi and its Applications," International Journal of Advances in Engineering and Management, vol. 2, no. 12, pp. 225-227, Dec. 2020. DOI: 10.35629/5252-0212225227
+- MediaPipe, Retrieved May. 6, 2024. Available:https://ai.google.dev/edge/mediapipe/solutions/guide
+- J.Y. Kim, "A comparative study on the characteristics of each version of object detection model YOLO," in Proceedings of Proceedings of the Korean Society of Computer Information Conference , Daejeon, Korea, pp. 75-78, Jul. 2023. Available: https://www.dbpia.co.kr/pdf/ pdfView.do?nodeId=NODE11528162
+- H.J. Gwak, Y.J. Jeong, I.J. Chun, and C.H. Lee, "Estimation of fruit number of apple tree based on YOLOv5 and regression model," Journal of IKEEE, vol. 28, no. 2, pp. 28-35, Jun. 2024. Available: https://www.dbpia.co.kr/pdf/ pdfView.do?nodeId=NODE11840256
+-  J.H. Kang, “Distance-based Adaptive Anchor box Selection for Object Detection and Localization with Magnetic Declination Correction in Drone,” Journal of Institute of Control, Robotics and Systems,  vol. 27, no. 10, pp. 776-783, Oct. 2021. DOI : 10.5302/J.ICROS.2021.21.0092
+- H.J. Kim, “Breastfeeding Room: Moms Only”,  gyeong-sang-il-bo, Apr. 2019.  Available: https://www.ksilbo.co.kr/news/articleView.html?idxno=691443
